@@ -1,77 +1,47 @@
 const NavBar = ({ setCategory }) => {
+  const categories = [
+    "technology",
+    "business",
+    "health",
+    "sports",
+    "entertainment",
+    "science",
+  ];
+
   return (
-    <div>
-      <nav
-        className='navbar navbar-expand-lg bg-body-tertiary'
-        data-bs-theme='dark'
-      >
-        <div className='container-fluid'>
-          <a className='navbar-brand' href='#'>
-            <span className='badge bg-light text-dark fs-4'>NewsMag</span>
-          </a>
-          <button
-            className='navbar-toggler'
-            type='button'
-            data-bs-toggle='collapse'
-            data-bs-target='#navbarNav'
-            aria-controls='navbarNav'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          <div className='collapse navbar-collapse' id='navbarNav'>
-            <ul className='navbar-nav'>
-              <li className='nav-item'>
+    <div className="container mt-4">
+      <nav className="navbar navbar-expand-lg bg-dark rounded-4 shadow-sm px-3 py-2">
+        <a className="navbar-brand fw-bold text-white" href="#">
+          <span className="badge bg-warning text-dark px-3 py-2 fs-6">
+            📰 NewsMag
+          </span>
+        </a>
+
+        <button
+          className="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav gap-2">
+            {categories.map((item) => (
+              <li className="nav-item" key={item}>
                 <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("technology")}
+                  className="btn btn-sm nav-btn text-capitalize"
+                  onClick={() => setCategory(item)}
                 >
-                  Technology
+                  {item}
                 </button>
               </li>
-              <li className='nav-item'>
-                <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("business")}
-                >
-                  Business
-                </button>
-              </li>
-              <li className='nav-item'>
-                <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("health")}
-                >
-                  Health
-                </button>
-              </li>
-              <li className='nav-item'>
-                <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("sports")}
-                >
-                  Sports
-                </button>
-              </li>
-              <li className='nav-item'>
-                <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("entertainment")}
-                >
-                  Entertainment
-                </button>
-              </li>
-              <li className='nav-item'>
-                <button
-                  className='nav-link cursor-pointer'
-                  onClick={() => setCategory("science")}
-                >
-                  Science
-                </button>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
       </nav>
     </div>

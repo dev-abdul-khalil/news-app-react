@@ -1,27 +1,3 @@
-/* navbar */
-
-.nav-btn {
-  background: transparent;
-  color: #d1d5db;
-  border: none;
-  border-radius: 20px;
-  padding: 6px 14px;
-  transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-  background: #0d6efd;
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-.navbar {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* footer */
-
 const Footer = () => {
   return (
     <footer className="container mt-5 mb-4">
